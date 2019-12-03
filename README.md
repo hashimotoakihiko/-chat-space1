@@ -9,6 +9,8 @@
 ### Association
 - has_many :groups, through: :users_groups
 - has_many :users_groups
+- has_many :messages
+
 
 
 ## groupsテーブル
@@ -17,7 +19,8 @@
 | name   | integer |         |
 ### Association
 - has_many :users, through: :users_groups
-- belongs_to : messages
+- has_many :messages
+- has_many :users_groups
 
 ## users_groupsテーブル
 | Column   | Type    | Options                        |
