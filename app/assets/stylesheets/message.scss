@@ -1,0 +1,173 @@
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100vw;
+    .contents {
+      height: 100vh;
+      .sidebar {
+        height: 100vh;
+        width: 300px;
+        margin: 0;
+        background-color: #2f3e51;
+        float: left;
+        color: $white;
+        .header {
+          @extend.clearfix;
+          height: 106px;
+          padding: 0 20px 0 20px;
+          background-color: #253141;
+          color: $white;
+          font-weight: bold;
+          &__user {
+            font-size: 16px;
+            padding: 35px 0;
+            float: left;
+            font-weight: bold;
+          }
+          .fa {
+            float: right;
+            color: $white;
+            font-size: 16px;
+          }
+          .fa.fa-cog {
+            padding-left: 5px;
+          }
+        }
+        .groups {
+          padding: 20px 20px 0 20px;
+          .group {
+            &__name {
+              font-size: 15px;
+              padding-bottom: 5px;
+              color: $white;
+            }
+            &__message {
+              font-size: 11px;
+              padding-bottom: 40px;
+              color: $white;
+            }
+          }
+        }
+      }
+      .chatbox {
+        height: 100vh;
+        width: calc(100vw - 300px);
+        float: right;
+        .header {
+          width: 900px;
+          height: 96px;
+          border-bottom: 1px solid #eeeeee;
+          padding: 0 40px 9px;
+          .group {
+            float: left;
+            &__name {
+              padding: 35px 0 15px;
+              font-size: 20px;
+              color: #333;
+            }
+            &__members {
+              font-size: 12px;
+              color: $hex-gray;
+            }
+          }
+          &__button {
+            float: right;
+            margin: 28px 0 0 0;
+            color: $hex;
+            padding: 0 20px;
+            line-height: 40px;
+            border: 1px solid $hex;
+          }
+        }
+        .messages {
+          overflow: auto;
+          height: calc(100vh - 196px);
+          width: calc(100vw - 340px);
+          padding: 0 0 0 40px;
+          background-color: #FAFAFA;
+          .message {
+            color: #434A54;
+            .heading {
+              clear: both;
+              padding: 46px 0 10px;
+               &__user-name {
+                font-size: 16px;
+                font-weight: bold;
+                float: left;
+                padding-right: 10px;
+                }
+              &__date {
+                font-size: 12px;
+                float: left;
+                color: $hex-gray;
+              }
+            }
+            &__body {
+              clear: both;
+              padding-bottom: 40px;
+              font-size: 14px;
+            }
+          }
+        }
+        .post-box {
+          padding: 20px 40px;
+          background-color: #DDDDDD;
+          width: calc(100% - 380px);
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @extend.clearfix;
+          .form {
+            @extend.clearfix;
+            input::-webkit-input-placeholder {
+              color: #434A54;
+              font-size: 16px;
+            }
+            input:-moz-placeholder {
+              color: #434A54;
+              font-size: 16px;
+            }
+            input::-moz-placeholder {
+              color: #434A54;
+              font-size: 16px;
+            }
+            input:-ms-input-placeholder {
+              color: #434A54;
+              font-size: 16px;
+            }
+            &__input {
+              width: 900px - 101px;
+              line-height: 50px;
+              padding-left: 10px;
+              float: left;
+              margin: 0;
+              border: 0;
+            }
+            label {
+              position: relative;
+              top: 20px;
+              right: 30px;
+              .hidden {
+                display: none;
+              }
+            }
+            &__button {
+              background-color: $hex;
+              color: $white;
+              float: right;
+              background-color: $hex;
+              padding: 0 20px;
+              line-height: 50px;
+              border: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
