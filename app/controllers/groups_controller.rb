@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
     else
       render :edit
     end
+    
   end
 
   private
@@ -34,4 +35,4 @@ class GroupsController < ApplicationController
   def set_group
     @group = Group.find(params[:id])
   end
-end 
+end
