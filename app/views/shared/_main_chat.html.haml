@@ -10,15 +10,10 @@
     = link_to edit_group_path(@group.id), class: "right-header" do
       Edit
   .messages
-    .message{data: {message: {id: @message.id}}}
-      .upper-message
-        .upper-message__user-name
-          メンバー
-        .upper-message__date
-          2017/04/04
-      .lower-meesage
-        .lower-message__content
-          メッセージ
+    = render partial: "message", collection: @messages
+    
+
+
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
@@ -27,4 +22,3 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
-  
